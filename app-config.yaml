@@ -35,7 +35,7 @@ backend:
       host: 127.0.0.1
       port: 5432
       user: ileendewolf
-      password: Bol.com
+      password: ${password} #config this
   # workingDirectory: /tmp # Use this to configure a working directory for the scaffolder, defaults to the OS temp-dir
 
 integrations:
@@ -77,13 +77,13 @@ auth:
     #TODO: DO NOT LEAVE THIS IN!!!! THIS NEEDS TO BE IN ENVIROMENT VARIABLES
     github:
       development:
-        clientId: Ov23liKcRTTyd9fzuVGi
-        clientSecret: 08f5b10880d95ddde356dc91125dffc551492441
-      # signIn:
-      #   resolvers:
-      #     - resolver: usernameMatchingUserEntityName
-      #     - resolver: emailMatchingUserEntityProfileEmail
-      #     - resolver: emailLocalPartMatchingUserEntityName
+        clientId: ${clientId}
+        clientSecret:${clientSecret}
+      signIn:
+        resolvers:
+          - resolver: usernameMatchingUserEntityName
+          - resolver: emailMatchingUserEntityProfileEmail
+          - resolver: emailLocalPartMatchingUserEntityName
 
 scaffolder:
   # see https://backstage.io/docs/features/software-templates/configuration for software template options
